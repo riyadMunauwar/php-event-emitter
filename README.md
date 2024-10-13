@@ -17,10 +17,10 @@ This PHP Event and Listener System provides a flexible and robust solution for i
 To use this system in your project, simply include the provided PHP files in your project and use Composer's autoloading or require them manually.
 
 ```php
-require_once 'path/to/EventSystem/Event.php';
-require_once 'path/to/EventSystem/EventDispatcher.php';
-require_once 'path/to/EventSystem/ListenerProvider.php';
-require_once 'path/to/EventSystem/EventDispatcherAwareTrait.php';
+require_once 'path/to/Event/Event.php';
+require_once 'path/to/Event/EventDispatcher.php';
+require_once 'path/to/Event/ListenerProvider.php';
+require_once 'path/to/Event/EventDispatcherAwareTrait.php';
 ```
 
 ## Core Components
@@ -30,7 +30,7 @@ require_once 'path/to/EventSystem/EventDispatcherAwareTrait.php';
 The `Event` class represents an event in your system. It contains a name and optional data associated with the event.
 
 ```php
-use EventSystem\Event;
+use Event\Event;
 
 $event = new Event('user.registered', ['user_id' => 123]);
 ```
@@ -40,7 +40,7 @@ $event = new Event('user.registered', ['user_id' => 123]);
 The `EventDispatcher` is responsible for managing listeners and dispatching events.
 
 ```php
-use EventSystem\EventDispatcher;
+use Event\EventDispatcher;
 
 $dispatcher = new EventDispatcher();
 ```
@@ -50,7 +50,7 @@ $dispatcher = new EventDispatcher();
 The `ListenerProvider` is a simple class for registering and retrieving listeners for events.
 
 ```php
-use EventSystem\ListenerProvider;
+use Event\ListenerProvider;
 
 $provider = new ListenerProvider();
 ```
@@ -60,7 +60,7 @@ $provider = new ListenerProvider();
 This trait can be used in your classes to easily integrate event dispatching functionality.
 
 ```php
-use EventSystem\EventDispatcherAwareTrait;
+use Event\EventDispatcherAwareTrait;
 
 class YourClass
 {
